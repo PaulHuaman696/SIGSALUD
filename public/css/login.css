@@ -1,0 +1,147 @@
+/* login.css */
+
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  color: #00345b;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+progress {
+  width: 100%;
+  height: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  appearance: none;
+  margin-bottom: 25px;
+}
+progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 10px;
+}
+progress::-webkit-progress-value {
+  background-color: #00345b;
+  border-radius: 10px;
+}
+progress::-moz-progress-bar {
+  background-color: #00345b;
+  border-radius: 10px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+input[type="text"],
+input[type="password"] {
+  width: 83%;
+  padding: 12px 40px 12px 15px;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1.5px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #00345b;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #999;
+  user-select: none;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  background-color: #00345b;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #001f38;
+}
+
+.register-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+.register-text a {
+  font-weight: 700;
+  font-style: italic;
+  cursor: pointer;
+  color: #00345b;
+  text-decoration: none;
+}
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .form-container {
+    margin: 20px 15px;
+    padding: 25px 15px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 0.95rem;
+    padding: 10px 35px 10px 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 81%;
+  }
+
+  .toggle-password {
+    font-size: 1rem;
+    right: 8px;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .register-text {
+    font-size: 0.9rem;
+  }
+}

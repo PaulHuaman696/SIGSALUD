@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registrar Usuario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/signup.css" />
+  
+</head>
+<body>
+  <div class="form-container">
+    <h2>REGISTRAR</h2>
+    <progress value="60" max="100"></progress>
+
+    <form method="POST" action="/register">
+      <div class="input-group">
+        <input type="text" name="usuario" placeholder="Usuario" required />
+      </div>
+      <div class="input-group">
+        <input type="email" name="correo" placeholder="Correo" required />
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Contraseña" required />
+        <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+      </div>
+      <div class="input-group">
+        <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirmar contraseña" required />
+        <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
+      </div>
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="terminos" required /> Acepto los términos y condiciones.</label>
+        <label><input type="checkbox" name="privacidad" required /> Acepto los términos de privacidad.</label>
+      </div>
+
+      <button type="submit">REGISTRAR</button>
+      <button type="button" class="btn-back" onclick="window.history.back()">ATRÁS</button>
+    </form>
+  </div>
+
+  <script>
+    function togglePassword(id) {
+      const passInput = document.getElementById(id);
+      if(passInput.type === 'password') {
+        passInput.type = 'text';
+      } else {
+        passInput.type = 'password';
+      }
+    }
+  </script>
+</body>
+</html>

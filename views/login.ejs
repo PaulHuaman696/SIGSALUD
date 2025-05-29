@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inicio de Sesión</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>INICIO DE SESIÓN</h2>
+    <progress value="50" max="100"></progress>
+
+    <form method="POST" action="/login">
+      <div class="input-group">
+        <input type="text" name="usuario" placeholder="Usuario" required />
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Contraseña" required />
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <label class="checkbox-group">
+        <input type="checkbox" name="recordar" /> Recordar Usuario
+      </label>
+
+      <button type="submit">INICIAR SESIÓN</button>
+    </form>
+
+    <p class="register-text">
+      ¿aun no tienes cuenta? <a href="/register">REGÍSTRATE</a>
+    </p>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passInput = document.getElementById('password');
+      if(passInput.type === 'password') {
+        passInput.type = 'text';
+      } else {
+        passInput.type = 'password';
+      }
+    }
+  </script>
+</body>
+</html>

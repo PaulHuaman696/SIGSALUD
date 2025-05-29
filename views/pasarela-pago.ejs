@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pasarela de Pago</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .container {
+      max-width: 480px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      color: #00345b;
+    }
+    h2 {
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    .ticket {
+      border: 1.5px solid #4bb2a7;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+    .ticket-item {
+      margin-bottom: 8px;
+    }
+    .ticket-item span {
+      font-weight: 700;
+      color: #00345b;
+    }
+    .payment-options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .payment-options label {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .payment-options input {
+      cursor: pointer;
+    }
+    button {
+      width: 100%;
+      background-color: #00345b;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #001f38;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Resumen de Pago</h2>
+    <div class="ticket">
+      <div class="ticket-item"><span>Doctor:</span> <%= doctor.nombre %></div>
+      <div class="ticket-item"><span>Especialidad:</span> <%= doctor.especialidad %></div>
+      <div class="ticket-item"><span>Fecha:</span> <%= fecha %></div>
+      <div class="ticket-item"><span>Hora:</span> <%= hora %></div>
+      <div class="ticket-item"><span>Monto a pagar:</span> S/ <%= monto %></div>
+    </div>
+
+    <form method="POST" action="/procesar-pago">
+      <div class="payment-options">
+        <label><input type="radio" name="metodo_pago" value="tarjeta" required /> Tarjeta de crédito/débito</label>
+        <label><input type="radio" name="metodo_pago" value="transferencia" /> Transferencia bancaria</label>
+        <label><input type="radio" name="metodo_pago" value="efectivo" /> Pago en efectivo</label>
+      </div>
+      <button type="submit">Confirmar Pago</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crear Reserva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <form action="/crear-reserva" method="POST">
+    <h2>Crear Reserva</h2>
+    <progress value="20" max="100"></progress>
+    <input type="text" name="dni" placeholder="Número de DNI" required />
+    <input type="text" name="nombres" placeholder="Nombres" required />
+    <input type="text" name="apellidos" placeholder="Apellidos" required />
+    <input type="tel" name="telefono" placeholder="Número telefónico" required />
+    <div class="gender">
+      <label><input type="radio" name="genero" value="Hombre" /> Hombre</label>
+      <label><input type="radio" name="genero" value="Mujer" checked /> Mujer</label>
+    </div>
+    <button type="submit">Next</button>
+  </form>
+</body>
+</html>
