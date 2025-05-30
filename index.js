@@ -71,14 +71,16 @@ app.get("/register", (req, res) => {
 });
 
 // Ruta Crear Reserva (formulario)
-app.get("/crear-reserva", (req, res) => {
+app.get("/crearReserva", (req, res) => {
   res.render("crearReserva", { formData: {} });
 });
 
-app.post("/crear-reserva", (req, res) => {
+app.post("/crearReserva", (req, res) => {
+  if (!req.body.dni) {
+    res.render("crearReserva", { formData: {} });
+    return;
+  }
   const { dni, nombres, apellidos, telefono, genero } = req.body;
-  // Aquí procesas la reserva, guardas en DB, etc.
-  // Por ahora, solo reenvía los datos para confirmar
   res.send(`Reserva creada para ${nombres} ${apellidos}, DNI: ${dni}`);
 });
 
@@ -114,8 +116,8 @@ app.post("/confirmar-cita", (req, res) => {
 
   res.redirect(
     `/pasarela-pago?fecha=${fecha}&hora=${hora}&dni=${dni}&nombre=${nombre}&apellido=${apellido}&edad=${edad}&paraQuien=${paraQuien}&motivo=${encodeURIComponent(
-      motivo || ""
-    )}`
+      motivo || "",
+    )}`,
   );
 });
 
