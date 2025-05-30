@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <title>Doctores - <%= especialidad %></title>
+  <title>Doctores - <%= especialidad %>
+  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/css/styles.css" />
   <style>
@@ -11,30 +13,35 @@
       margin: 20px auto;
       padding: 10px 15px;
     }
+
     .filter-row {
       display: flex;
       justify-content: space-between;
       margin-bottom: 15px;
       align-items: center;
     }
+
     .filter-row label {
       font-weight: 600;
       color: #00345b;
     }
+
     .doctor-list {
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
+
     .doctor-card {
       background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       padding: 15px;
       display: flex;
       gap: 15px;
       align-items: center;
     }
+
     .doctor-photo {
       width: 80px;
       height: 80px;
@@ -44,35 +51,43 @@
       background-size: cover;
       background-position: center;
     }
+
     .doctor-info {
       flex-grow: 1;
     }
+
     .doctor-name {
       font-weight: 700;
       font-size: 1.2rem;
       color: #00345b;
       margin-bottom: 4px;
     }
+
     .doctor-desc {
       font-size: 0.9rem;
       color: #555;
       margin-bottom: 6px;
     }
+
     .doctor-rating {
-      color: #f4c150; /* dorado para estrellas */
+      color: #f4c150;
+      /* dorado para estrellas */
       margin-bottom: 6px;
     }
+
     .doctor-favorite {
       cursor: pointer;
       font-size: 1.5rem;
       color: #e74c3c;
       user-select: none;
     }
+
     .doctor-actions {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
+
     .btn-select {
       background-color: #4bb2a7;
       color: white;
@@ -83,61 +98,74 @@
       font-weight: 700;
       transition: background-color 0.3s ease;
     }
+
     .btn-select:hover {
       background-color: #3a8e82;
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <div class="filter-row">
-      <label><input type="checkbox" id="filterDisponibles" onchange="filtrarDisponibles()" /> Mostrar solo disponibles hoy</label>
-    </div>
 
-    <div class="doctor-list" id="listaDoctores">
-      <% doctores.forEach(doctor => { %>
-        <div class="doctor-card" data-disponible="<%= doctor.disponibleHoy %>">
-          <div class="doctor-photo" style="background-image: url('<%= doctor.fotoUrl %>')"></div>
-          <div class="doctor-info">
-            <div class="doctor-name"><%= doctor.nombre %></div>
-            <div class="doctor-desc"><%= doctor.descripcion %></div>
-            <div class="doctor-rating">
-              <% for(let i=0; i<5; i++) { %>
-                <% if(i < doctor.calificacion) { %>
-                  ★
-                <% } else { %>
-                  ☆
-                <% } %>
-              <% } %>
+<body>
+  <%- include('partials/header') %>
+    <h1 class="page-title">Doctores</h1>
+    <p class="page-subtitle">Selecciona el doctor de su preferencia para agendar tu cita</p>
+
+    <div class="container">
+      <div class="filter-row">
+        <label><input type="checkbox" id="filterDisponibles" onchange="filtrarDisponibles()" /> Mostrar solo disponibles
+          hoy</label>
+      </div>
+
+      <div class="doctor-list" id="listaDoctores">
+        <% doctores.forEach(doctor=> { %>
+          <div class="doctor-card" data-disponible="<%= doctor.disponibleHoy %>">
+            <div class="doctor-photo" style="background-image: url('<%= doctor.fotoUrl %>')"></div>
+            <div class="doctor-info">
+              <div class="doctor-name">
+                <%= doctor.nombre %>
+              </div>
+              <div class="doctor-desc">
+                <%= doctor.descripcion %>
+              </div>
+              <div class="doctor-rating">
+                <% for(let i=0; i<5; i++) { %>
+                  <% if(i < doctor.calificacion) { %>
+                    ★
+                    <% } else { %>
+                      ☆
+                      <% } %>
+                        <% } %>
+              </div>
+            </div>
+            <div class="doctor-actions">
+              <div class="doctor-favorite" onclick="toggleFavorito(this)">❤</div>
+              <button class="btn-select"
+                onclick="location.href='/seleccionar-cita/<%= doctor.id %>'">Seleccionar</button>
             </div>
           </div>
-          <div class="doctor-actions">
-            <div class="doctor-favorite" onclick="toggleFavorito(this)">❤</div>
-            <button class="btn-select" onclick="location.href='/seleccionar-cita/<%= doctor.id %>'">Seleccionar</button>
-          </div>
-        </div>
-      <% }) %>
+          <% }) %>
+      </div>
     </div>
-  </div>
 
-  <script>
-    function filtrarDisponibles() {
-      const checkbox = document.getElementById('filterDisponibles');
-      const lista = document.getElementById('listaDoctores');
-      const cards = lista.querySelectorAll('.doctor-card');
-      cards.forEach(card => {
-        const disponible = card.getAttribute('data-disponible') === 'true';
-        card.style.display = (!checkbox.checked || disponible) ? 'flex' : 'none';
-      });
-    }
-
-    function toggleFavorito(el) {
-      if(el.style.color === 'red' || el.style.color === 'rgb(255, 0, 0)') {
-        el.style.color = '#e74c3c'; // rojo original
-      } else {
-        el.style.color = 'red';
+    <script>
+      function filtrarDisponibles() {
+        const checkbox = document.getElementById('filterDisponibles');
+        const lista = document.getElementById('listaDoctores');
+        const cards = lista.querySelectorAll('.doctor-card');
+        cards.forEach(card => {
+          const disponible = card.getAttribute('data-disponible') === 'true';
+          card.style.display = (!checkbox.checked || disponible) ? 'flex' : 'none';
+        });
       }
-    }
-  </script>
+
+      function toggleFavorito(el) {
+        if (el.style.color === 'red' || el.style.color === 'rgb(255, 0, 0)') {
+          el.style.color = '#e74c3c'; // rojo original
+        } else {
+          el.style.color = 'red';
+        }
+      }
+    </script>
 </body>
+
 </html>

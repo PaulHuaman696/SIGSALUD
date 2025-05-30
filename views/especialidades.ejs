@@ -1,77 +1,210 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <title>Especialidades</title>
+  <title>Especialidades Médicas - Clínica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/css/styles.css" />
   <style>
+    body {
+      background-color: #f7f9fc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #00345b;
+      margin: 0;
+      padding: 0;
+    }
+
     .container {
       max-width: 480px;
-      margin: 20px auto;
+      margin: 20px auto 40px;
       padding: 15px;
     }
+
+    
+
     .search-bar {
       width: 100%;
-      padding: 12px 15px;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: 1.8px solid #ccc;
-      margin-bottom: 20px;
+      padding: 14px 18px;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      border: 2px solid #4bb2a7;
+      margin-bottom: 25px;
       outline: none;
-      transition: border-color 0.3s ease;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
+
     .search-bar:focus {
-      border-color: #4bb2a7;
+      border-color: #00345b;
+      box-shadow: 0 0 8px #4bb2a7;
     }
+
     .specialties-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 20px;
       justify-content: center;
     }
+
+
+
     .specialty-card {
       background-color: white;
-      border-radius: 12px;
-      padding: 20px;
+      border-radius: 16px;
+      padding: 22px 20px;
       flex: 1 1 45%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
       cursor: pointer;
-      text-align: center;
-      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-weight: 700;
+      font-size: 1.2rem;
       color: #00345b;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
       user-select: none;
+      position: relative;
+      overflow: hidden;
     }
+
+    .specialty-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(75, 178, 167, 0.15), rgba(255, 255, 255, 0.3), rgba(75, 178, 167, 0.15));
+      transform: skewX(-25deg);
+      transition: left 0.6s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .specialty-card:hover::after {
+      left: 50%;
+    }
+
     .specialty-card:hover {
       background-color: #4bb2a7;
       color: white;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+      z-index: 1;
+    }
+
+    .specialty-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      fill: #00345b;
+      transition: fill 0.35s ease;
+      z-index: 2;
+    }
+
+    .specialty-card:hover .specialty-icon {
+      fill: white;
+    }
+
+    @media (max-width: 500px) {
+      .specialty-card {
+        flex: 1 1 100%;
+        font-size: 1.1rem;
+        padding: 18px 16px;
+        gap: 12px;
+      }
+
+      .specialty-icon {
+        width: 30px;
+        height: 30px;
+      }
+
+      .search-bar {
+        font-size: 1rem;
+        padding: 12px 14px;
+        border-radius: 8px;
+      }
+
+      h1.page-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <input type="text" id="searchEspecialidad" class="search-bar" placeholder="Buscar especialidad..." onkeyup="filtrarEspecialidades()" />
-    <div class="specialties-list" id="listaEspecialidades">
-      <div class="specialty-card" onclick="location.href='/doctores/cardiologia'">Cardiología</div>
-      <div class="specialty-card" onclick="location.href='/doctores/medicina-general'">Medicina General</div>
-      <div class="specialty-card" onclick="location.href='/doctores/neumologia'">Neumología</div>
-      <div class="specialty-card" onclick="location.href='/doctores/pediatria'">Pediatría</div>
-      <div class="specialty-card" onclick="location.href='/doctores/dermatologia'">Dermatología</div>
-      <!-- Añade más especialidades -->
-    </div>
-  </div>
 
-  <script>
-    function filtrarEspecialidades() {
-      const input = document.getElementById('searchEspecialidad');
-      const filter = input.value.toLowerCase();
-      const cards = document.querySelectorAll('.specialty-card');
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(filter) ? 'block' : 'none';
-      });
-    }
-  </script>
+<body>
+  <%- include('partials/header') %>
+    <div class="container">
+      <h1 class="page-title">Especialidades Médicas</h1>
+      <p class="page-subtitle">Selecciona la especialidad que necesitas para agendar tu cita</p>
+
+      <input type="text" id="searchEspecialidad" class="search-bar" placeholder="Buscar especialidad..."
+        onkeyup="filtrarEspecialidades()" aria-label="Buscar especialidad" />
+
+      <div class="specialties-list" id="listaEspecialidades">
+        <div class="specialty-card" onclick="location.href='/doctores/cardiologia'"
+          title="Cardiología - Especialidad médica del corazón">
+          <!-- Icono corazón -->
+          <svg class="specialty-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6.5 3.5 5 5.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5 18.5 5 20 6.5 20 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+          Cardiología
+        </div>
+
+        <div class="specialty-card" onclick="location.href='/doctores/medicina-general'"
+          title="Medicina General - Atención primaria de salud">
+          <!-- Icono cruz médica -->
+          <svg class="specialty-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+          </svg>
+          Medicina General
+        </div>
+
+        <div class="specialty-card" onclick="location.href='/doctores/neumologia'"
+          title="Neumología - Especialidad de pulmones y sistema respiratorio">
+          <!-- Icono pulmones -->
+          <svg class="specialty-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+            <path fill="#00345b" d="M28 2v60h8V2z" />
+            <circle cx="20" cy="12" r="12" fill="#4bb2a7" />
+          </svg>
+          Neumología
+        </div>
+
+        <div class="specialty-card" onclick="location.href='/doctores/pediatria'"
+          title="Pediatría - Atención a niños y adolescentes">
+          <!-- Icono bebé -->
+          <svg class="specialty-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="6" r="4" />
+            <path d="M6 22v-4c0-3 6-3 6 0v4" />
+          </svg>
+          Pediatría
+        </div>
+
+        <div class="specialty-card" onclick="location.href='/doctores/dermatologia'"
+          title="Dermatología - Especialidad de la piel">
+          <!-- Icono piel -->
+          <svg class="specialty-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="#00345b" stroke-width="2" />
+            <path d="M7 7h10v10H7z" />
+          </svg>
+          Dermatología
+        </div>
+        <!-- Más especialidades -->
+      </div>
+    </div>
+
+    <script>
+      function filtrarEspecialidades() {
+        const input = document.getElementById('searchEspecialidad');
+        const filter = input.value.toLowerCase();
+        const cards = document.querySelectorAll('.specialty-card');
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(filter) ? 'flex' : 'none';
+        });
+      }
+    </script>
 </body>
+
 </html>

@@ -112,6 +112,25 @@ progress::-webkit-progress-bar {
   border-radius: 10px;
 }
 
+h1.page-title {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+  color: #00345b;
+  text-shadow: 1px 1px 3px rgba(75, 178, 167, 0.7);
+}
+
+.page-subtitle {
+  text-align: center;
+  color: #4bb2a7;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: -12px;
+  margin-bottom: 22px;
+  font-style: italic;
+}
+
 progress::-webkit-progress-value {
   background-color: #4bb2a7;
   border-radius: 10px;
@@ -132,6 +151,7 @@ progress::-moz-progress-bar {
   justify-content: flex-end;
   padding: 15px 20px;
   background-color: #47abc8;
+  min-height: 75px;
 }
 
 .btn-login {
@@ -209,6 +229,41 @@ progress::-moz-progress-bar {
   background-color: #b73227;
 }
 
+.app-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 75px;
+  padding: 15px 20px;
+  background-color: #47abc8;
+  color: white;
+  font-weight: 700;
+  gap: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.guest-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-login-header {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-login-header:hover {
+  background-color: white;
+  color: #47abc8;
+}
+
 /* Responsive ajuste menor */
 @media (max-width: 360px) {
   .btn-login {
@@ -229,6 +284,7 @@ progress::-moz-progress-bar {
     margin: 30px 10px;
     padding: 25px 20px;
   }
+
   form h2 {
     font-size: 1.6rem;
   }
@@ -240,15 +296,18 @@ progress::-moz-progress-bar {
     flex-direction: row;
     align-items: center;
   }
+
   form {
     padding: 20px 15px;
   }
+
   input[type="text"],
   input[type="tel"],
   select {
     font-size: 0.95rem;
     padding: 10px 12px;
   }
+
   form button[type="submit"] {
     font-size: 1.1rem;
     padding: 14px;
