@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <title>Pasarela de Pago</title>
@@ -12,14 +13,16 @@
       padding: 20px;
       background: white;
       border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
       color: #00345b;
     }
+
     h2 {
       font-weight: 700;
       margin-bottom: 25px;
       text-align: center;
     }
+
     .ticket {
       border: 1.5px solid #4bb2a7;
       border-radius: 12px;
@@ -27,19 +30,23 @@
       margin-bottom: 20px;
       font-size: 1rem;
     }
+
     .ticket-item {
       margin-bottom: 8px;
     }
+
     .ticket-item span {
       font-weight: 700;
       color: #00345b;
     }
+
     .payment-options {
       display: flex;
       flex-direction: column;
       gap: 15px;
       margin-bottom: 25px;
     }
+
     .payment-options label {
       cursor: pointer;
       font-weight: 600;
@@ -48,10 +55,60 @@
       align-items: center;
       gap: 8px;
     }
+
+    /* Modal */
+    .modal {
+      display: none;
+      /* oculto */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 350px;
+      font-weight: 700;
+      color: #00345b;
+    }
+
+    #btnOkModal {
+      margin-top: 25px;
+      padding: 12px 25px;
+      background-color: #4bb2a7;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    #btnOkModal:hover {
+      background-color: #3a8e82;
+    }
+
+    .subtitle_meth_pay {
+      font-weight: 700;
+      font-size: 24px;
+    }
+
     .payment-options input {
       cursor: pointer;
     }
-    button {
+
+    .btn_pagar {
       width: 100%;
       background-color: #00345b;
       color: white;
@@ -63,30 +120,63 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    button:hover {
+
+    .btn_pagar:hover {
       background-color: #001f38;
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h2>Resumen de Pago</h2>
-    <div class="ticket">
-      <div class="ticket-item"><span>Doctor:</span> <%= doctor.nombre %></div>
-      <div class="ticket-item"><span>Especialidad:</span> <%= doctor.especialidad %></div>
-      <div class="ticket-item"><span>Fecha:</span> <%= fecha %></div>
-      <div class="ticket-item"><span>Hora:</span> <%= hora %></div>
-      <div class="ticket-item"><span>Monto a pagar:</span> S/ <%= monto %></div>
-    </div>
 
-    <form method="POST" action="/procesar-pago">
-      <div class="payment-options">
-        <label><input type="radio" name="metodo_pago" value="tarjeta" required /> Tarjeta de crédito/débito</label>
-        <label><input type="radio" name="metodo_pago" value="transferencia" /> Transferencia bancaria</label>
-        <label><input type="radio" name="metodo_pago" value="efectivo" /> Pago en efectivo</label>
+<body>
+  <%- include('partials/header') %>
+    <h1 class="page-title">Confirma y paga tu cita</h1>
+    <div class="container">
+      <h2>Resumen de Pago</h2>
+      <div class="ticket">
+        <div class="ticket-item"><span>Doctor:</span>
+          <%= doctor.nombre %>
+        </div>
+        <div class="ticket-item"><span>Especialidad:</span>
+          <%= doctor.especialidad %>
+        </div>
+        <div class="ticket-item"><span>Fecha:</span>
+          <%= fecha %>
+        </div>
+        <div class="ticket-item"><span>Hora:</span>
+          <%= hora %>
+        </div>
+        <div class="ticket-item"><span>Monto a pagar:</span> S/ <%= monto %>
+        </div>
       </div>
-      <button type="submit">Confirmar Pago</button>
-    </form>
-  </div>
+
+      <form id="formPago" method="POST" action="/procesar-pago" onsubmit="return mostrarModal(event)">
+        <h2 class="subtitle_meth_pay">Método de pago</h2>
+        <div class="payment-options">
+          <label><input type="radio" name="metodo_pago" value="tarjeta" required /> Tarjeta de crédito/débito</label>
+          <label><input type="radio" name="metodo_pago" value="transferencia" /> Transferencia bancaria</label>
+          <label><input type="radio" name="metodo_pago" value="efectivo" /> Pago en efectivo</label>
+        </div>
+        <button class="btn_pagar" type="submit">Confirmar Pago</button>
+      </form>
+      <!-- Modal oculto inicialmente -->
+      <div id="modalExito" class="modal">
+        <div class="modal-content">
+          <h2>¡Pago realizado con éxito!</h2>
+          <button id="btnOkModal">OK, volver al inicio</button>
+        </div>
+      </div>
+      <script>
+        function mostrarModal(event) {
+          event.preventDefault(); // no enviar el formulario
+          document.getElementById('modalExito').style.display = 'flex';
+          return false;
+        }
+
+        document.getElementById('btnOkModal').addEventListener('click', () => {
+          window.location.href = '/'; // redirigir al home
+        });
+      </script>
+    </div>
 </body>
+
 </html>

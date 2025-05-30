@@ -15,11 +15,6 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
       color: #00345b;
     }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
     label {
       font-weight: 600;
       margin-top: 15px;
@@ -63,7 +58,7 @@
       align-items: center;
       gap: 6px;
     }
-    button {
+    .btn_pagar {
       width: 100%;
       background-color: #00345b;
       color: white;
@@ -76,14 +71,20 @@
       transition: background-color 0.3s ease;
       margin-top: 10px;
     }
-    button:hover {
+    .btn_pagar:hover {
       background-color: #001f38;
+    }
+    form {
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
+  <%- include('partials/header') %>
   <div class="container">
-    <h2>Seleccionar Fecha y Datos del Paciente</h2>
+    <h1 class="page-title">Datos del Paciente</h1>
+      <p class="page-subtitle">Selecciona la fecha y agregue los datos del paciente para agendar tu cita</p>
+
 
     <form method="POST" action="/confirmar-cita">
       <label for="fecha">Fecha</label>
@@ -112,7 +113,7 @@
       <label for="motivo">Motivo (opcional)</label>
       <textarea id="motivo" name="motivo" rows="3" placeholder="Describa el motivo de la cita"></textarea>
 
-      <button type="submit">Pagar</button>
+      <button class="btn_pagar" type="submit">Pagar</button>
     </form>
   </div>
 

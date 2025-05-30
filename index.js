@@ -20,7 +20,7 @@ const doctoresPorEspecialidad = {
       descripcion: "Cardiólogo experto",
       calificacion: 5,
       disponibleHoy: true,
-      fotoUrl: "/images/doctor1.jpg",
+      fotoUrl: "/images/doc1.jpg",
     },
     {
       id: "doc2",
@@ -28,7 +28,7 @@ const doctoresPorEspecialidad = {
       descripcion: "Especialista en cardiología",
       calificacion: 4,
       disponibleHoy: false,
-      fotoUrl: "/images/doctor2.jpg",
+      fotoUrl: "/images/doc3.jpg",
     },
   ],
   "medicina-general": [
