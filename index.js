@@ -38,7 +38,7 @@ const doctoresPorEspecialidad = {
       descripcion: "Medicina general",
       calificacion: 4,
       disponibleHoy: true,
-      fotoUrl: "/images/doctor3.jpg",
+      fotoUrl: "images/doctor3.jpg",
     },
   ],
   // agrega más especialidades...

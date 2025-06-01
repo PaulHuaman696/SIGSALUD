@@ -79,7 +79,7 @@ input[type="password"]:focus {
 }
 
 button {
-  width: 100%;
+  width: fit-content
   background-color: #00345b;
   color: white;
   border: none;
@@ -108,6 +108,11 @@ button:hover {
 }
 .register-text a:hover {
   text-decoration: underline;
+}
+
+header {
+    display: flex;
+    gap:10px
 }
 
 /* Responsivo */
