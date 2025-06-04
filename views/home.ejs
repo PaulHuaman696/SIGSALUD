@@ -10,24 +10,54 @@
 
 <body>
   <header class="header-mobile">
-    <button class="btn-login" onclick="location.href='/login'">Iniciar sesión</button>
+      <a onclick="location.href='/'">Inicio</a>
+      <a onclick="location.href='/login'">Personal</a>
+      <button class="btn-login" onclick="location.href='/login'">Iniciar sesión</button>
   </header>
 
   <main class="main-home">
-    <div class="logo-container">
-      <!-- Logo SVG simple -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 64 64" fill="none" stroke="#00345b"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="32" cy="32" r="30" fill="#4bb2a7" />
-        <path d="M20 32 L28 40 L44 24" stroke="#fff" stroke-width="3" />
-      </svg>
-    </div>
-
+      <div class="topico_tecsup-div">
+          <h1 class="topico_tecsup-tittle">TOPICO TECSUP</h1>
+          <p class="topico_tecsup-paragrafh">Lorem ipsum dolor sit amet consectetur. Odio id porta tellus elementum tincidunt elit. Augue vel elit tincidunt integer iaculis sit tortor. Scelerisque non proin gravida ac in enim purus.</p>
+      </div>
     <div class="btn-group">
+        <button class="btn-third"><item></item>Llamar al +51 942657893</button>
       <button class="btn-primary" onclick="location.href='/especialidades'">Agendar cita</button>
       <button class="btn-secondary" onclick="alert('Llamando a emergencia...')">Cita por emergencia</button>
     </div>
   </main>
+  <div class="second_nav_bar">
+      <ul>
+          <a>
+          <img class="text-icon" src="/../icons/user-doctor-solid.svg"/><li>Especialidad</li>
+          </a>
+          <a>
+          <img class="text-icon" src="/../icons/users-solid.svg"/><li>Staff Medico</li>
+          </a>
+          <a>
+          <img class="text-icon" src="/../icons/bell-concierge-solid.svg"/><li>Servicios</li>
+          </a>
+          <a>
+          <img class="text-icon" src="/../icons/book-solid.svg"/><li>Blog</li>
+          </a>
+      </ul>
+  </div>
+  <footer>
+      <div class="image-container">
+      <image src="/images/Ellipse43.png"/>
+      <h4>Medicina interna</h4>
+      </div>
+      <div class="image-container">
+      <image src="/images/Ellipse45.png"/>
+      <h4>Laparscopia</h4>
+      </div>
+      <div class="image-container">
+      <image src="/images/Ellipse46.png"/>
+      <h4>Psicologia</h4>
+      </div>
+  </footer>
+  <div class="footer-button_container">
+      <button class="btn-third">VER TODAS LAS ESPECIALIDADES</button>
+  </div>
 </body>
-
 </html>

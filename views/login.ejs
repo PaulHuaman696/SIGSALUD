@@ -6,19 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/css/login.css" />
 </head>
-<body>
+<body class="container-boddy">
   <div class="form-container">
     <h2>INICIO DE SESIÓN</h2>
     <progress value="50" max="100"></progress>
 
-    <form method="POST" action="/login">
+    <form method="POST" action="/crearReserva">
       <div class="input-group">
         <input type="text" name="usuario" placeholder="Usuario" required />
       </div>
 
       <div class="input-group">
         <input type="password" id="password" name="password" placeholder="Contraseña" required />
-        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        <span class="toggle-password" onclick="togglePassword()">
+            <img id="eye" src="/../icons/eye-slash-regular.svg"/>
+        </span>
       </div>
 
       <label class="checkbox-group">
@@ -36,11 +38,17 @@
   <script>
     function togglePassword() {
       const passInput = document.getElementById('password');
-      if(passInput.type === 'password') {
-        passInput.type = 'text';
-      } else {
-        passInput.type = 'password';
-      }
+      const eye = document.getElementById('eye')
+      const arrEyeSrc = eye.src.split("/");
+      passInput.type = passInput.type === 'password' ? 'text' : 'password';
+      arrEyeSrc.splice(-1, 1,
+        `eye-${
+          passInput.type === 'password' ?
+          'slash-' :
+          ""
+        }regular.svg`
+      )
+      eye.src = arrEyeSrc.join("/")
     }
   </script>
 </body>
