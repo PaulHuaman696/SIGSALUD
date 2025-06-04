@@ -137,8 +137,7 @@ header {
     input[type="password"] {
         font-size: 0.95rem;
         padding: 10px 35px 10px 5px;
-        margin-left: 5%;
-        margin-right: 5%;
+        
         width: 81%;
     }
 
@@ -154,5 +153,9 @@ header {
 
     .register-text {
         font-size: 0.9rem;
+    }
+
+    .checkbox-group {
+    margin-left: 5px;
     }
 }

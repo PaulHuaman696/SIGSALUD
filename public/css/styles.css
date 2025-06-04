@@ -135,6 +135,7 @@ h1.page-title {
     margin-bottom: 22px;
     font-style: italic;
 }
+
 /* Botón Atrás */
 .btn-back-header {
     background-color: white;
@@ -163,6 +164,7 @@ h1.page-title {
 .btn-back-header:active {
     transform: scale(1);
 }
+
 progress::-webkit-progress-value {
     background-color: #4bb2a7;
     border-radius: 10px;
@@ -172,14 +174,17 @@ progress::-moz-progress-bar {
     background-color: #003153;
     border-radius: 10px;
 }
+
 .image-container {
     width: fit-content;
     justify-content: center;
     text-align: center;
 }
+
 .image-container {
     color: white;
 }
+
 footer {
     width: 100%;
     background-color: #001f38;
@@ -190,11 +195,13 @@ footer {
     justify-content: center;
     gap: 50px;
 }
+
 img {
     width: 160px;
     height: 160px;
     border-radius: 50%;
 }
+
 .footer-button_container {
     height: fit-content;
     padding: 30px;
@@ -203,6 +210,7 @@ img {
     display: flex;
     justify-content: center;
 }
+
 /* ============================
    Estilos para home.ejs
    ============================ */
@@ -243,7 +251,6 @@ img {
     color: #003153;
 }
 
-/* Contenedor principal */
 .main-home {
     display: flex;
     flex-direction: column;
@@ -251,14 +258,28 @@ img {
     align-items: center;
     min-height: calc(100vh - 60px);
     padding: 20px;
-    background: url(../images/HS_1\ 1.jpg);
-    background-size: cover;
+    position: relative;
+    /* Necesario para posicionar el pseudo-elemento */
+    z-index: 0;
+    /* Asegura que el contenido quede encima */
+    overflow: hidden;
+    /* Previene que el fondo sobresalga */
 }
 
-.topico_tecsup-tittle {
-    color: #003153;
-    font-size: 64px;
-    line-height: 0.8;
+.main-home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../images/HS_1\ 1.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    /* Ajusta el nivel de opacidad del fondo */
+    z-index: -1;
+    /* Envía el fondo detrás del contenido */
 }
 
 .topico_tecsup-div {
@@ -266,11 +287,34 @@ img {
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding: 0px 0px 30px 0px;
+    gap: 20px;
+    padding: 24px;
     text-align: center;
     box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.75);
+    ;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
 }
+
+.topico_tecsup-tittle {
+    color: #003153;
+    font-size: 48px;
+    /* Menor para mejor adaptación */
+    line-height: 1.1;
+    margin: 0;
+    font-weight: 700;
+}
+
+.topico_tecsup-paragrafh {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
 
 .second_nav_bar {
     min-height: 70px;
@@ -305,10 +349,9 @@ ul a {
 /* Botones */
 .btn-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
-    width: 100%;
-    max-width: 300px;
+    align-items: center;
 }
 
 .btn-primary,
@@ -320,6 +363,7 @@ ul a {
     border-radius: 30px;
     border: none;
     cursor: pointer;
+    width: 300px;
     box-shadow: 0 6px 12px rgba(50, 50, 50, 0.5);
     transition:
         background-color 0.3s ease,
@@ -430,6 +474,35 @@ ul a {
     .main-home {
         padding: 40px 20px;
     }
+
+    .topico_tecsup-div {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .topico_tecsup-tittle {
+        font-size: 36px;
+    }
+
+    .topico_tecsup-paragrafh {
+        font-size: 15px;
+    }
+
+    .app-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .second_nav_bar ul {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-button_container {
+        flex-direction: column;
+        padding: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -453,5 +526,103 @@ ul a {
     form button[type="submit"] {
         font-size: 1.1rem;
         padding: 14px;
+    }
+
+    .topico_tecsup-tittle {
+        font-size: 28px;
+    }
+
+    .topico_tecsup-paragrafh {
+        font-size: 14px;
+    }
+
+    .btn-back-header {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .form {
+        padding: 20px 10px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select {
+        font-size: 0.9rem;
+    }
+
+    .btn-group {
+        gap: 12px;
+    }
+
+    footer {
+        padding: 20px 0;
+        gap: 30px;
+    }
+
+    .footer-button_container {
+        flex-direction: row;
+    }
+
+    img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .app-header {
+        flex-direction: row;
+        align-items: center;
+        padding: 12px 16px;
+        gap: 12px;
+        position: relative;
+    }
+
+    .guest-info {
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        width: max-content;
+    }
+
+    .btn-login-header {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+        width: max-content;
+        text-align: left;
+    }
+
+
+    .btn-back-header {
+        width: max-content;
+        height: max-content;
+        /* Que el botón ocupe todo el ancho disponible */
+        font-size: 0.95rem;
+        padding: 10px 14px;
+        text-align: left;
+        /* Se alinea como en apps móviles */
+    }
+
+    .btn-back-header .back-text {
+        display: none;
+        /* Oculta el texto "Atrás" en móvil */
+    }
+}
+
+@media (max-width: 1024px) {
+    .topico_tecsup-tittle {
+        font-size: 40px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-third {
+        width: 90%;
+        max-width: 400px;
     }
 }
