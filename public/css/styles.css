@@ -122,7 +122,7 @@ h1.page-title {
     font-weight: 900;
     font-size: 2.4rem;
     margin-bottom: 25px;
-    color: #00345b;
+    color: white;
     text-shadow: 1px 1px 3px rgba(75, 178, 167, 0.7);
 }
 
@@ -251,12 +251,19 @@ img {
     align-items: center;
     min-height: calc(100vh - 60px);
     padding: 20px;
-    background: url(../images/HS_1\ 1.jpg);
+    background-image:
+        linear-gradient(
+            rgba(0, 49, 83, 1),
+            rgba(80, 80, 80, 0.4),
+            rgba(80, 80, 80, 0.4),
+            rgba(255, 255, 255, 1)
+        ),
+        url(../images/HS_1\ 1.jpg);
     background-size: cover;
 }
 
 .topico_tecsup-tittle {
-    color: #003153;
+    color: white;
     font-size: 64px;
     line-height: 0.8;
 }
