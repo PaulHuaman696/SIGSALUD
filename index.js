@@ -1,6 +1,9 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("path");
+
+const token = process.env.API_TOKEN;
 
 // Mock datos para demo (en producción usa DB)
 const especialidades = [
@@ -48,6 +51,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "helpers")));
 app.use(express.urlencoded({ extended: false }));
 
 // Ruta Especialidades
@@ -72,12 +76,12 @@ app.get("/register", (req, res) => {
 
 // Ruta Crear Reserva (formulario)
 app.get("/crearReserva", (req, res) => {
-  res.render("crearReserva", { formData: {} });
+  res.render("crearReserva", { formData: {}, token });
 });
 
 app.post("/crearReserva", (req, res) => {
   if (!req.body.dni) {
-    res.render("crearReserva", { formData: {} });
+    res.render("crearReserva", { formData: {}, token });
     return;
   }
   const { dni, nombres, apellidos, telefono, genero } = req.body;

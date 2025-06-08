@@ -10,9 +10,9 @@
   <form action="/crearReserva" method="POST">
     <h2>Crear Reserva</h2>
     <progress value="20" max="100"></progress>
-    <input type="text" name="dni" placeholder="Número de DNI" required />
-    <input type="text" name="nombres" placeholder="Nombres" required />
-    <input type="text" name="apellidos" placeholder="Apellidos" required />
+    <input id="dni" type="number" name="dni" placeholder="Número de DNI"  required />
+    <input id="nombres" type="text" name="nombres" placeholder="Nombres" required />
+    <input id="apellidos" type="text" name="apellidos" placeholder="Apellidos" required />
     <input type="tel" name="telefono" placeholder="Número telefónico" required />
     <div class="gender">
       <label><input type="radio" name="genero" value="Hombre" /> Hombre</label>
@@ -20,5 +20,32 @@
     </div>
     <button type="submit">Next</button>
   </form>
+  <script type="module">
+  import {getDataByDNI} from '/getDataByDNI.js';
+
+  const token = "<%= token %>";
+
+  const htmlNombres = document.getElementById("nombres");
+  const htmlApellidos = document.getElementById("apellidos");
+  const htmlDNI = document.getElementById("dni");
+
+  htmlDNI.addEventListener("input", async (e) => {
+    htmlNombres.value = ""
+    htmlApellidos.value = ""
+    const value = e.target.value;
+    if(value.length == 8) {
+    const {data, success, errorMessage} = await getDataByDNI(value.toString(), token)
+    if(success){
+      const {nombres, apellido_paterno, apellido_materno} = data;
+      console.log(data)
+      htmlNombres.value = nombres
+      htmlApellidos.value = `${apellido_paterno} ${apellido_materno}`
+    }else{
+      window.alert(errorMessage)
+    }
+    }
+  })
+
+  </script>
 </body>
 </html>
