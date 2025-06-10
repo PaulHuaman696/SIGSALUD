@@ -18,8 +18,8 @@
 
       <div class="input-group">
         <input type="password" id="password" name="password" placeholder="Contraseña" required />
-        <span class="toggle-password" onclick="togglePassword()">
-            <img id="eye" src="/../icons/eye-slash-regular.svg"/>
+        <span class="toggle-password">
+            <img onclick="togglePassword(this, 'password')" src="/../icons/eye-slash-regular.svg"/>
         </span>
       </div>
 
@@ -36,20 +36,12 @@
   </div>
 
   <script>
-    function togglePassword() {
-      const passInput = document.getElementById('password');
-      const eye = document.getElementById('eye')
-      const arrEyeSrc = eye.src.split("/");
-      passInput.type = passInput.type === 'password' ? 'text' : 'password';
-      arrEyeSrc.splice(-1, 1,
-        `eye-${
-          passInput.type === 'password' ?
-          'slash-' :
-          ""
-        }regular.svg`
-      )
-      eye.src = arrEyeSrc.join("/")
-    }
+  function togglePassword(htmlObj, inputID) {
+    const inputElement = document.getElementById(inputID)
+    const srcHtmlObj = htmlObj.src
+    htmlObj.src = inputElement.type === 'password' ? srcHtmlObj.replace("-slash","") : srcHtmlObj.replace("-","-slash-");
+    inputElement.type = inputElement.type === 'password' ? 'text' : 'password';
+  }
   </script>
 </body>
 </html>

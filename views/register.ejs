@@ -5,7 +5,7 @@
   <title>Registrar Usuario</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/css/signup.css" />
-  
+
 </head>
 <body>
   <div class="form-container">
@@ -21,11 +21,11 @@
       </div>
       <div class="input-group">
         <input type="password" id="password" name="password" placeholder="Contraseña" required />
-        <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+        <img class="toggle-password" onclick="togglePassword(this, 'password')" src="/../icons/eye-slash-regular.svg"/>
       </div>
       <div class="input-group">
         <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirmar contraseña" required />
-        <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
+        <img class="toggle-password" onclick="togglePassword(this, 'confirm-password')" src="/../icons/eye-slash-regular.svg"/>
       </div>
 
       <div class="checkbox-group">
@@ -37,15 +37,12 @@
       <button type="button" class="btn-back" onclick="window.history.back()">ATRÁS</button>
     </form>
   </div>
-
   <script>
-    function togglePassword(id) {
-      const passInput = document.getElementById(id);
-      if(passInput.type === 'password') {
-        passInput.type = 'text';
-      } else {
-        passInput.type = 'password';
-      }
+    function togglePassword(htmlObj, inputID) {
+      const inputElement = document.getElementById(inputID)
+      const srcHtmlObj = htmlObj.src
+      htmlObj.src = inputElement.type === 'password' ? srcHtmlObj.replace("-slash","") : srcHtmlObj.replace("-","-slash-");
+      inputElement.type = inputElement.type === 'password' ? 'text' : 'password';
     }
   </script>
 </body>
