@@ -1,7 +1,9 @@
 const express = require("express");
 const path = require("path");
-
+const conectDB = require("./config/db");
 const app = express();
+
+conectDB();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
