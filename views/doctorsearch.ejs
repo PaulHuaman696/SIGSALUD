@@ -1,0 +1,182 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Search Doctor</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden"
+      style='--select-button-svg: url(&apos;data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(78,122,151)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e&apos;); font-family: "Public Sans", "Noto Sans", sans-serif;'
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eef3] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0e161b]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-[#0e161b] text-lg font-bold leading-tight tracking-[-0.015em]">HealthHub</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#0e161b] text-sm font-medium leading-normal" href="#">Find a doctor</a>
+              <a class="text-[#0e161b] text-sm font-medium leading-normal" href="#">Find a location</a>
+              <a class="text-[#0e161b] text-sm font-medium leading-normal" href="#">For providers</a>
+              <a class="text-[#0e161b] text-sm font-medium leading-normal" href="#">For employers</a>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#1993e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Sign up</span>
+              </button>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#e7eef3] text-[#0e161b] text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Log in</span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-80">
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0e161b] text-base font-medium leading-normal pb-2">Doctor type</p>
+                <select
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e161b] focus:outline-0 focus:ring-0 border border-[#d0dee7] bg-slate-50 focus:border-[#d0dee7] h-14 bg-[image:--select-button-svg] placeholder:text-[#4e7a97] p-[15px] text-base font-normal leading-normal"
+                >
+                  <option value="one">Select a specialty</option>
+                  <option value="two">two</option>
+                  <option value="three">three</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0e161b] text-base font-medium leading-normal pb-2">City</p>
+                <select
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e161b] focus:outline-0 focus:ring-0 border border-[#d0dee7] bg-slate-50 focus:border-[#d0dee7] h-14 bg-[image:--select-button-svg] placeholder:text-[#4e7a97] p-[15px] text-base font-normal leading-normal"
+                >
+                  <option value="one">Select a city</option>
+                  <option value="two">two</option>
+                  <option value="three">three</option>
+                </select>
+              </label>
+            </div>
+            <div class="flex px-4 py-3">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 flex-1 bg-[#1993e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Search</span>
+              </button>
+            </div>
+          </div>
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <h2 class="text-[#0e161b] tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Find a Doctor</h2>
+            <h2 class="text-[#0e161b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Featured Doctors</h2>
+            <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+              <div class="flex items-stretch p-4 gap-8">
+                <div class="flex h-full flex-1 flex-col gap-4 text-center rounded-lg min-w-32 pt-4">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full flex flex-col self-center w-full"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCeymwlcHWCrKrULBSJRuergwkH7zLV4PugVSfXWz1Uo3-DFSMZg7_UZBLIwgqej_5nJw36H3RNHMqLI1HUBxJ8b0Od3d01rdLlzbCw31prQV2P5dr-gEe3LYuJXMGLcrmpU9eWZeVuFrqmX7itABk8x57CrJBQV8mdIHNV7UejRbOQhl-f9z1CYN6l8UQnEKqjGcygnEwEJb5MARvQq4QoKzUe5CwTQjAkwVRYl1RUoanAy7NMh5a8rlNz9JZXuZmkY2ZobuBCog");'
+                  ></div>
+                  <div>
+                    <p class="text-[#0e161b] text-base font-medium leading-normal">Dr. Sophia Carter</p>
+                    <p class="text-[#4e7a97] text-sm font-normal leading-normal">Cardiologist in New York</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 text-center rounded-lg min-w-32 pt-4">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full flex flex-col self-center w-full"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6tjSaz1bKbsSOfdtzlILd2QcBePGhY5KaPnYxShQrtX0COvj81J94ygNdsKFwMMsrFX06E-_8mfEeQEpFVLpK7UU5BaQ-bUGP_eC3Q3Eit2A2y3fOTbaJGWdeozr9F0CU-Ut0hl6_QA7k2PFZfwGTHeuhKIjWE71PjnSzzoE7d6FCFaUh_nfcY6cueTx8-yWk4DfBXDFr9WPwy-b-M9cWjMk9AKt6mu38KJuprPXK75TKXSWWG1n6gQUxVGXVdFMDMHdxzbGZcw");'
+                  ></div>
+                  <div>
+                    <p class="text-[#0e161b] text-base font-medium leading-normal">Dr. Ethan Harper</p>
+                    <p class="text-[#4e7a97] text-sm font-normal leading-normal">Dermatologist in Los Angeles</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 text-center rounded-lg min-w-32 pt-4">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full flex flex-col self-center w-full"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJPEOhFHmPIqXCSxDWHaOdl0vt5EKuXNMVPCeEq4QGu5QHLqFRjDpsV8WcWRg7nadMkShtxdjT1WHLSZTjIIRjWMXnP9TE-Wkixvcki0M6hFsy0VhIms6xJSTh-yp2p_-e08c2IQ1zjzlSAilfrzY2vqUFJYkGLno70MT2HUKubwXSHjt6gjdsqtqFjO5VgR1NDznE9FcKb5fCCBgnEsEO2EaW5ldZEUYHcoLYkWi1wzuSBUvuWk1oRUBLnHl4Ka1IHeGy994CBg");'
+                  ></div>
+                  <div>
+                    <p class="text-[#0e161b] text-base font-medium leading-normal">Dr. Isabella Hayes</p>
+                    <p class="text-[#4e7a97] text-sm font-normal leading-normal">Pediatrician in Chicago</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#0e161b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Popular Doctors</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 text-center pb-3">
+                <div class="px-4">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCismYaB_NGkKmGheBoYXAh7nl2DV4TmrlutBoGrhySZSjAfGoXnCeLVY1VvsUyGd7RKcp0jYiw-ORtXuuNRk_VxTa-6hDTyDzo-9UOn9PkNroxKq6QkRmnSGIXymT4aq-dXVK3m0N_nQk-IDAUJ-hhwjcmiYE14C_94ezHV_8QCoMNn0JTDJm3tfzQg4oTLKo47EkCTmP-ZCsGALfEK7vNWNlSs8shsIxTGaZTaXbL2fJYd2JspBQwGhlerlUJiRwhRBwBHkO4jg");'
+                  ></div>
+                </div>
+                <div>
+                  <p class="text-[#0e161b] text-base font-medium leading-normal">Dr. Liam Foster</p>
+                  <p class="text-[#4e7a97] text-sm font-normal leading-normal">Cardiologist in New York</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 text-center pb-3">
+                <div class="px-4">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4smIwA2tvyMCIecj1cIN3HErwhAm2rBV7BT0zXnXzHFJXrd7VIXFE-0A-KGQVOtzJoKEez3sl0v1uS7AwdqpP7vkhvN65gZV0g0GjM_onkaCBxQEBfq_TzKDB79DG0aPH1BEV7D8jx-_oqGXayxDmV9izenNP7DwF6o_PSePfVFi7Sgw0YEhMnUoDUY5C1T5TlWHGv-gMRiqtCnyxp-zEL79MEs6MGOJAWITWn1rObtwXTICeoQlTRXZlQEz2qe0r_ZeCdTU1Gg");'
+                  ></div>
+                </div>
+                <div>
+                  <p class="text-[#0e161b] text-base font-medium leading-normal">Dr. Ava Bennett</p>
+                  <p class="text-[#4e7a97] text-sm font-normal leading-normal">Dermatologist in Los Angeles</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 text-center pb-3">
+                <div class="px-4">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBM4KhdiM3dfvyIc_B5MxbqHZA6gbOtmpAdUfkn88NvLbCAq5-5i82cC7-Vr7nI3oWmQEazl3xY8jUeFv99B_vhD6Pr4E2QRBiN503sO_5Mq92daM0lJJBXxMjahHoIIadfs6349E94SakItN2KWJy2OXdBpEw__7TIN0y-d5RyLLBcYiVwjTKmPK7uRK2RFlUh1FIl5amsPS3JcRNF2nYot3wOXnmFAezcDMefP8zf7WnBUu6JMtJQ1CCU9GlG_U9oj4u-bxcZPg");'
+                  ></div>
+                </div>
+                <div>
+                  <p class="text-[#0e161b] text-base font-medium leading-normal">Dr. Noah Reed</p>
+                  <p class="text-[#4e7a97] text-sm font-normal leading-normal">Pediatrician in Chicago</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 text-center pb-3">
+                <div class="px-4">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcPkrI-dCcle8jqTq-pPUgWYNj7jJKFKqXP81jROlrAmRNaoBKAMKq75MVkk08qAiMtIRw06jpiasqe8tyO_pHnKbGMmPXvEuD8ZS2lFKP7mCNElCeDV5NGjOu6VhZ-HzvP07TDtcZys2vh7R-xYXpU7ggHNaakQ4vEKGfI5dhFktj3jh9TxoKTfmEJGgiqsyaNruntO32xZMesECeInps2DgNzxAWshSHm1xnv2_4OlIAmAJXDT690ZpNrNqUoUkov9BovjWMaw");'
+                  ></div>
+                </div>
+                <div>
+                  <p class="text-[#0e161b] text-base font-medium leading-normal">Dr. Chloe Walker</p>
+                  <p class="text-[#4e7a97] text-sm font-normal leading-normal">Orthopedic Surgeon in Houston</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
