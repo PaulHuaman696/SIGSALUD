@@ -5,16 +5,45 @@
   <title>Seleccionar Cita</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <%- include('partials/header') %>
+  <div class="max-w-[480px] mx-auto my-[20px] px-[15px] py-[10px] bg-white rounded-[12px] shadow-[0_6px_18px_rgba(0,0,0,0.1)] text-[#00345b]">
+    <h1 class="page-title">Datos del Paciente</h1>
+      <p class="page-subtitle">Selecciona la fecha y agregue los datos del paciente para agendar tu cita</p>
+
+
+    <form class="mt-[10px]" method="POST" action="/confirmar-cita">
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" name="fecha" required min="<%= fechaMinima %>" />
+
+      <label for="hora">Hora</label>
+      <input type="time" id="hora" name="hora" required />
+
+      <label>DNI del Paciente</label>
+      <input type="text" id="dni" name="dni" placeholder="Ingrese DNI" maxlength="8" required oninput="autocompletarPaciente()" />
+
+      <label>Nombre</label>
+      <input type="text" id="nombre" name="nombre" readonly />
+
+      <label>Apellido</label>
+      <input type="text" id="apellido" name="apellido" readonly />
+
+      <label>Edad</label>
+      <input type="number" id="edad" name="edad" readonly />
+
+      <div class="flex gap-[20px] mb-[15px] font-semibold">
+        <label class="cursor-pointer flex items-center gap-[6px]"><input type="radio" name="paraQuien" value="yo" checked /> La cita es para mí</label>
+        <label class="cursor-pointer flex items-center gap-[6px]"><input type="radio" name="paraQuien" value="otro" /> Para otra persona</label>
+      </div>
+
+      <label for="motivo">Motivo (opcional)</label>
+      <textarea id="motivo" name="motivo" rows="3" placeholder="Describa el motivo de la cita"></textarea>
+
+      <button class="w-full bg-[#00345b] text-white border-none p-[15px] rounded-[10px] font-bold text-[1.2rem] cursor-pointer transition-colors duration-300 mt-[10px] hover:bg-[#001f38]" type="submit">Pagar</button>
+    </form>
+  </div>
   <style>
-    .container {
-      max-width: 480px;
-      margin: 20px auto;
-      padding: 10px 15px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      color: #00345b;
-    }
     label {
       font-weight: 600;
       margin-top: 15px;
@@ -46,77 +75,7 @@
       border-color: #4bb2a7;
       box-shadow: 0 0 6px #4bb2a7;
     }
-    .radio-group {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-    .radio-group label {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .btn_pagar {
-      width: 100%;
-      background-color: #00345b;
-      color: white;
-      border: none;
-      padding: 15px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 10px;
-    }
-    .btn_pagar:hover {
-      background-color: #001f38;
-    }
-    form {
-      margin-top: 10px;
-    }
   </style>
-</head>
-<body>
-  <%- include('partials/header') %>
-  <div class="container">
-    <h1 class="page-title">Datos del Paciente</h1>
-      <p class="page-subtitle">Selecciona la fecha y agregue los datos del paciente para agendar tu cita</p>
-
-
-    <form method="POST" action="/confirmar-cita">
-      <label for="fecha">Fecha</label>
-      <input type="date" id="fecha" name="fecha" required min="<%= fechaMinima %>" />
-
-      <label for="hora">Hora</label>
-      <input type="time" id="hora" name="hora" required />
-
-      <label>DNI del Paciente</label>
-      <input type="text" id="dni" name="dni" placeholder="Ingrese DNI" maxlength="8" required oninput="autocompletarPaciente()" />
-
-      <label>Nombre</label>
-      <input type="text" id="nombre" name="nombre" readonly />
-
-      <label>Apellido</label>
-      <input type="text" id="apellido" name="apellido" readonly />
-
-      <label>Edad</label>
-      <input type="number" id="edad" name="edad" readonly />
-
-      <div class="radio-group">
-        <label><input type="radio" name="paraQuien" value="yo" checked /> La cita es para mí</label>
-        <label><input type="radio" name="paraQuien" value="otro" /> Para otra persona</label>
-      </div>
-
-      <label for="motivo">Motivo (opcional)</label>
-      <textarea id="motivo" name="motivo" rows="3" placeholder="Describa el motivo de la cita"></textarea>
-
-      <button class="btn_pagar" type="submit">Pagar</button>
-    </form>
-  </div>
-
   <script>
     // Simulación de autocompletado al ingresar DNI (en producción consultar API o DB)
     function autocompletarPaciente() {

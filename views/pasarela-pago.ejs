@@ -6,133 +6,14 @@
   <title>Pasarela de Pago</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/css/styles.css" />
-  <style>
-    .container {
-      max-width: 480px;
-      margin: 20px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-      color: #00345b;
-    }
-
-    h2 {
-      font-weight: 700;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-
-    .ticket {
-      border: 1.5px solid #4bb2a7;
-      border-radius: 12px;
-      padding: 15px;
-      margin-bottom: 20px;
-      font-size: 1rem;
-    }
-
-    .ticket-item {
-      margin-bottom: 8px;
-    }
-
-    .ticket-item span {
-      font-weight: 700;
-      color: #00345b;
-    }
-
-    .payment-options {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .payment-options label {
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      /* oculto */
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 30px 25px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      max-width: 350px;
-      font-weight: 700;
-      color: #00345b;
-    }
-
-    #btnOkModal {
-      margin-top: 25px;
-      padding: 12px 25px;
-      background-color: #4bb2a7;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 1rem;
-      color: white;
-      transition: background-color 0.3s ease;
-    }
-
-    #btnOkModal:hover {
-      background-color: #3a8e82;
-    }
-
-    .subtitle_meth_pay {
-      font-weight: 700;
-      font-size: 24px;
-    }
-
-    .payment-options input {
-      cursor: pointer;
-    }
-
-    .btn_pagar {
-      width: 100%;
-      background-color: #00345b;
-      color: white;
-      border: none;
-      padding: 14px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn_pagar:hover {
-      background-color: #001f38;
-    }
-  </style>
 </head>
 
 <body>
   <%- include('partials/header') %>
     <h1 class="page-title">Confirma y paga tu cita</h1>
-    <div class="container">
+    <div class="max-w-[480px] mx-auto my-[20px] p-[20px] bg-white rounded-[12px] shadow-[0_6px_18px_rgba(0,0,0,0.1)] text-[#00345b]">
       <h2>Resumen de Pago</h2>
-      <div class="ticket">
+      <div class="border-[1.5px] border-[#4bb2a7] rounded-[12px] p-[15px] mb-[20px] text-base">
         <div class="ticket-item"><span>Doctor:</span>
           <%= doctor.nombre %>
         </div>
@@ -150,19 +31,19 @@
       </div>
 
       <form id="formPago" method="POST" action="/procesar-pago" onsubmit="return mostrarModal(event)">
-        <h2 class="subtitle_meth_pay">Método de pago</h2>
-        <div class="payment-options">
+        <h2 class="font-bold text-[24px]">Método de pago</h2>
+        <div class="payment-options flex flex-col gap-[15px] mb-[25px]">
           <label><input type="radio" name="metodo_pago" value="tarjeta" required /> Tarjeta de crédito/débito</label>
           <label><input type="radio" name="metodo_pago" value="transferencia" /> Transferencia bancaria</label>
           <label><input type="radio" name="metodo_pago" value="efectivo" /> Pago en efectivo</label>
         </div>
-        <button class="btn_pagar" type="submit">Confirmar Pago</button>
+        <button class="w-full bg-[#00345b] text-white border-none py-[14px] rounded-[10px] font-bold text-[1.2rem] cursor-pointer transition-colors duration-300 hover:bg-[#001f38]" type="submit">Confirmar Pago</button>
       </form>
       <!-- Modal oculto inicialmente -->
-      <div id="modalExito" class="modal">
-        <div class="modal-content">
+      <div id="modalExito" class="hidden fixed z-[1000] left-0 top-0 w-screen h-screen bg-[rgba(0,0,0,0.5)] flex justify-center items-center">
+        <div class="bg-white p-[30px_25px] rounded-[12px] shadow-[0_6px_18px_rgba(0,0,0,0.2)] text-center max-w-[350px] font-bold text-[#00345b]">
           <h2>¡Pago realizado con éxito!</h2>
-          <button id="btnOkModal">OK, volver al inicio</button>
+          <button class="mt-[25px] px-[25px] py-[12px] bg-[#4bb2a7] border-none rounded-[10px] cursor-pointer font-bold text-base text-white transition-colors duration-300 hover:bg-[#3a8e82]" id="btnOkModal">OK, volver al inicio</button>
         </div>
       </div>
       <script>
@@ -180,3 +61,35 @@
 </body>
 
 </html>
+  <style>
+
+    h2 {
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .ticket-item {
+      margin-bottom: 8px;
+    }
+
+    .ticket-item span {
+      font-weight: 700;
+      color: #00345b;
+    }
+
+    .payment-options label {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Modal */
+
+    .payment-options input {
+      cursor: pointer;
+    }
+  </style>

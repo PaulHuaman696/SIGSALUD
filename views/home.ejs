@@ -6,29 +6,30 @@
   <title>Inicio - Clínica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/output.css" />
 </head>
 
-<body>
-  <header class="header-mobile">
+<body >
+  <header class="flex justify-end items-center gap-[30px] px-5 py-[15px] min-h-[50px] bg-[#003153]">
       <a onclick="location.href='/'">Inicio</a>
       <a onclick="location.href='/login'">Personal</a>
       <a onclick="location.href='/login'">Iniciar sesión</a>
-      <button class="btn-login" onclick="location.href='/register'">Registrate</button>
+      <button class="bg-transparent border-2 border-white text-white px-4 py-2 font-bold text-base rounded-full cursor-pointer transition-colors duration-300 ease-in-out hover:bg-white hover:text-[#003153]" onclick="location.href='/register'">Registrate</button>
   </header>
 
-  <main class="main-home">
-      <div class="topico_tecsup-div">
-          <h1 class="topico_tecsup-tittle">TOPICO TECSUP</h1>
-          <p class="topico_tecsup-paragrafh">Lorem ipsum dolor sit amet consectetur. Odio id porta tellus elementum tincidunt elit. Augue vel elit tincidunt integer iaculis sit tortor. Scelerisque non proin gravida ac in enim purus.</p>
+  <main class="main-home flex flex-col justify-center items-center min-h-[calc(100vh-60px)] p-5 bg-cover bg-[url('../images/HS_1_1.jpg')]">
+      <div class="w-full max-w-[500px] flex flex-col gap-[30px] pb-[30px] text-center box-border">
+          <h1 class="font-bold text-white text-[64px] leading-[0.8]">TOPICO TECSUP</h1>
+          <p>Lorem ipsum dolor sit amet consectetur. Odio id porta tellus elementum tincidunt elit. Augue vel elit tincidunt integer iaculis sit tortor. Scelerisque non proin gravida ac in enim purus.</p>
       </div>
-    <div class="btn-group">
+    <div class="flex flex-col gap-5 w-full max-w-[300px]">
         <button class="btn-third"><item></item>Llamar al +51 942657893</button>
       <button class="btn-primary" onclick="location.href='/especialidades'">Agendar cita</button>
       <button class="btn-secondary" onclick="alert('Llamando a emergencia...')">Cita por emergencia</button>
     </div>
   </main>
-  <div class="second_nav_bar">
-      <ul>
+  <div class="min-h-[70px] w-full py-[30px] flex items-center justify-center">
+      <ul class="flex flex-wrap gap-[60px] list-none justify-center py-[20px]">
           <a>
           <img class="text-icon" src="/../icons/user-doctor-solid.svg"/><li>Especialidad</li>
           </a>
@@ -43,7 +44,7 @@
           </a>
       </ul>
   </div>
-  <footer>
+  <footer class="w-full bg-[#001f38] py-[40px] box-border flex items-center justify-center gap-[50px]">
       <div class="image-container">
       <image src="/images/Ellipse43.png"/>
       <h4>Medicina interna</h4>
@@ -57,7 +58,7 @@
       <h4>Psicologia</h4>
       </div>
   </footer>
-  <div class="footer-button_container">
+  <div class="h-fit p-[30px] box-border bg-[#001f38] flex justify-center">
       <button class="btn-third">VER TODAS LAS ESPECIALIDADES</button>
   </div>
 </body>

@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <title>Registrar Usuario</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/output.css" />
   <link rel="stylesheet" href="/css/signup.css" />
-
 </head>
 <body>
-  <div class="form-container">
-    <h2>REGISTRAR</h2>
-    <progress value="60" max="100"></progress>
+  <div class="rounded-sm my-auto mx-auto max-w-[400px] text-[#00345b] shadow-xl/20 py-8 px-10">
+    <h2 class="text-center font-bold text-2xl mb-[25px]">REGISTRAR</h2>
+    <progress class="progress w-full h-[14px] rounded-[10px] mb-[25px] overflow-hidden appearance-none" value="60" max="100"></progress>
 
     <form method="POST" action="/register">
       <div class="input-group">
@@ -28,7 +28,7 @@
         <img class="toggle-password" onclick="togglePassword(this, 'confirm-password')" src="/../icons/eye-slash-regular.svg"/>
       </div>
 
-      <div class="checkbox-group">
+      <div class="flex flex-col gap-2.5 mb-5 font-bold cursor-pointer">
         <label><input type="checkbox" name="terminos" required /> Acepto los términos y condiciones.</label>
         <label><input type="checkbox" name="privacidad" required /> Acepto los términos de privacidad.</label>
       </div>
