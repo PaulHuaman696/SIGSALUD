@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const { pacientes } = require("../data/pacientes");
 
 router.get("/perfildedoctor", (req, res) => {
-  res.render("perfildedoctor");
+  res.render("perfildedoctor", { pacientes });
 });
 
 router.get("/paciente", (req, res) => {
