@@ -15,5 +15,6 @@ app.use("/", require("./routes/auth.routes"));
 app.use("/", require("./routes/doctor.routes"));
 app.use("/", require("./routes/reserva.routes"));
 app.use("/", require("./routes/pago.routes"));
+app.use("/", require("./routes/perfildoctor.routes"));
 
 module.exports = app;

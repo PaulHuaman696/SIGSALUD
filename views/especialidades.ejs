@@ -5,13 +5,14 @@
   <meta charset="UTF-8" />
   <title>Especialidades Médicas - Clínica</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/output.css" />
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body class="bg-[#f7f9fc] text-[#00345b]">
   <%- include('partials/header') %>
     <div class="max-w-[480px] mx-auto mt-[20px] mb-[40px] p-[15px]">
-      <h1 class="page-title">Especialidades Médicas</h1>
+      <h1 class="text-center font-black text-[2.4rem] mb-[25px] text-[#00345b]">Especialidades Médicas</h1>
       <p class="page-subtitle">Selecciona la especialidad que necesitas para agendar tu cita</p>
 
       <input type="text" id="searchEspecialidad" class="w-full px-[18px] py-[14px] text-[1.1rem] rounded-[10px] border-2 border-[#4bb2a7] mb-[25px] outline-none transition-all duration-300 focus:border-[#00345b] focus:shadow-[0_0_8px_#4bb2a7]" placeholder="Buscar especialidad..."
@@ -30,7 +31,6 @@
 
         <div class="specialty-card" onclick="location.href='/doctores/medicina-general'"
           title="Medicina General - Atención primaria de salud">
-          <!-- Icono cruz médica -->
           <svg class="specialty-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
           </svg>
@@ -39,7 +39,6 @@
 
         <div class="specialty-card" onclick="location.href='/doctores/neumologia'"
           title="Neumología - Especialidad de pulmones y sistema respiratorio">
-          <!-- Icono pulmones -->
           <svg class="specialty-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
             <path fill="#00345b" d="M28 2v60h8V2z" />
             <circle cx="20" cy="12" r="12" fill="#4bb2a7" />
@@ -66,9 +65,19 @@
           </svg>
           Dermatología
         </div>
-        <!-- Más especialidades -->
       </div>
     </div>
+    <script>
+      function filtrarEspecialidades() {
+        const input = document.getElementById('searchEspecialidad');
+        const filter = input.value.toLowerCase();
+        const cards = document.querySelectorAll('.specialty-card');
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(filter) ? 'flex' : 'none';
+        });
+      }
+    </script>
   <style>
     .specialty-card {
       background-color: white;
@@ -142,17 +151,6 @@
     }
   </style>
 
-    <script>
-      function filtrarEspecialidades() {
-        const input = document.getElementById('searchEspecialidad');
-        const filter = input.value.toLowerCase();
-        const cards = document.querySelectorAll('.specialty-card');
-        cards.forEach(card => {
-          const text = card.textContent.toLowerCase();
-          card.style.display = text.includes(filter) ? 'flex' : 'none';
-        });
-      }
-    </script>
 </body>
 
 </html>

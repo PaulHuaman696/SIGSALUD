@@ -1,0 +1,210 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+          <header class="flex items-center justify-between whitespace-nowrap border-b border-solid bg-[#003153] px-10 py-3">
+            <div class="flex items-center gap-4 text-gray-50">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-gray-50 text-lg font-bold leading-tight tracking-[-0.015em]">HealthHub</h2>
+            </div>
+            <div class="flex flex-1 justify-end gap-8">
+              <div class="flex items-center gap-9">
+                <a class="text-gray-50 text-sm font-medium leading-normal" href="#">Dashboard</a>
+                <a class="text-gray-50 text-sm font-medium leading-normal" href="#">Patients</a>
+                <a class="text-gray-50 text-sm font-medium leading-normal" href="#">Schedule</a>
+                <a class="text-gray-50 text-sm font-medium leading-normal" href="#">Billing</a>
+              </div>
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center rounded-full h-10 bg-[#eaeef1] text-gray-50 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#003153]" data-icon="Bell" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="px-4 py-3">
+              <label class="flex flex-col min-w-40 h-12 w-full">
+                <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                  <div
+                    class="text-[#4e7a97] flex border-none bg-[#e7eef3] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                    data-icon="MagnifyingGlass"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    placeholder="Search"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e161b] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none h-full placeholder:text-[#4e7a97] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                    value=""
+                  />
+                </div>
+              </label>
+            </div>
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#0e161b] tracking-light text-[32px] font-bold leading-tight min-w-72">Patient Data Access</p>
+            </div>
+            <div class="flex p-4 @container">
+              <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+                <div class="flex gap-4">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxsxYejOsLwGquW7uScyObNiC7hkS2dZHzhK4opnj0zrTZAgljXnDwZDHr0BAN4qm19E-HaICR0_DPn5jIBY3ydkQdH6X0Ov0acicnTHfSed0jTwq_cSuiUu8-ZP6itKuoE0emF0ofHtsLtdoWGCA6DracXZPhkpuPExTihe2SSuUlgpeCCUyyGpcd36iDeU1g6uNhwdM80MVuqQiKfVzLK4BArrOmIBvsg2EiXJb1OAG0CdIT81CDaWTcWbSDtKyHRbIq7tob2Q");'
+                  ></div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#0e161b] text-[22px] font-bold leading-tight tracking-[-0.015em]">Sophia Carter</p>
+                    <p class="text-[#4e7a97] text-base font-normal leading-normal">Patient ID: 12345</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#0e161b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Patient History</h2>
+            <div class="px-4 py-3">
+              <label class="flex flex-col min-w-40 h-12 w-full">
+                <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                  <div
+                    class="text-[#4e7a97] flex border-none bg-[#e7eef3] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                    data-icon="MagnifyingGlass"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    placeholder="Search by date or code"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e161b] focus:outline-0 focus:ring-0 border-none bg-[#e7eef3] focus:border-none h-full placeholder:text-[#4e7a97] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                    value=""
+                  />
+                </div>
+              </label>
+            </div>
+            <div class="px-4 py-3 @container">
+              <div class="flex overflow-hidden rounded-xl border border-[#d0dee7] bg-slate-50">
+                <table class="flex-1">
+                  <thead>
+                    <tr class="bg-slate-50">
+                      <th class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-120 px-4 py-3 text-left text-[#0e161b] w-[400px] text-sm font-medium leading-normal">Date</th>
+                      <th class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-240 px-4 py-3 text-left text-[#0e161b] w-[400px] text-sm font-medium leading-normal">Code</th>
+                      <th class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-360 px-4 py-3 text-left text-[#0e161b] w-[400px] text-sm font-medium leading-normal">
+                        Description
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-t border-t-[#d0dee7]">
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-120 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                        2024-03-15
+                      </td>
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-240 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">C123</td>
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-360 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                        Initial Consultation
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#d0dee7]">
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-120 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                        2024-04-20
+                      </td>
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-240 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">F456</td>
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-360 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                        Follow-up Appointment
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#d0dee7]">
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-120 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                        2024-05-25
+                      </td>
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-240 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">R789</td>
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-360 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                        Routine Checkup
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#d0dee7]">
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-120 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                        2024-06-30
+                      </td>
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-240 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">S012</td>
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-360 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                        Specialist Referral
+                      </td>
+                    </tr>
+                    <tr class="border-t border-t-[#d0dee7]">
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-120 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                        2024-08-05
+                      </td>
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-240 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">T345</td>
+                      <td class="table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-360 h-[72px] px-4 py-2 w-[400px] text-[#4e7a97] text-sm font-normal leading-normal">
+                        Treatment Plan Review
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <style>
+                          @container(max-width:120px){.table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-120{display: none;}}
+                @container(max-width:240px){.table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-240{display: none;}}
+                @container(max-width:360px){.table-2551b2fc-535a-4924-b5c5-3a3e91816994-column-360{display: none;}}
+              </style>
+            </div>
+            <div class="flex justify-stretch">
+              <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-start">
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#1993e5] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
+                >
+                  <span class="truncate">Update</span>
+                </button>
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#e7eef3] text-[#0e161b] text-sm font-bold leading-normal tracking-[0.015em]"
+                >
+                  <span class="truncate">Create New</span>
+                </button>
+              </div>
+            </div>
+            <div class="flex px-4 py-3 justify-start">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-transparent text-[#0e161b] text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Delete</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

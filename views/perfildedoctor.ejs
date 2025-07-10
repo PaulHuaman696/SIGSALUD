@@ -1,0 +1,325 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+  <link rel="stylesheet" href="/css/output.css" />
+    <title>Perfil de Doctor</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid bg-[#003153] px-10 py-3">
+          <div class="flex items-center gap-4 text-gray-50">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-gray-50 text-lg font-bold leading-tight tracking-[-0.015em]">HealthHub</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-gray-50 text-sm font-medium leading-normal" href="#">Dashboard</a>
+              <a class="text-gray-50 text-sm font-medium leading-normal" href="#">Patients</a>
+              <a class="text-gray-50 text-sm font-medium leading-normal" href="#">Schedule</a>
+              <a class="text-gray-50 text-sm font-medium leading-normal" href="#">Billing</a>
+            </div>
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center rounded-full h-10 bg-[#eaeef1] text-gray-50 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+            >
+              <div class="text-[#003153]" data-icon="Bell" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </header>
+        <div class="px-6 flex flex-1 flex-wrap justify-center box-border py-5">
+          <div class="flex flex-col w-fit min-w-50 items-center">
+            <div class="flex p-4">
+              <div class="flex w-fit flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+                <div class="flex flex-col gap-4 items-center">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBh5wslkXXhsBDDvbhOZia9CrpynpkflBNQV2ILtOpFyOqGIdC1CPXyL6aipnP7Dzgd6sTwzwontRSGD04xsU15gZPCUf8o5s-UH4g6tCkdHJIvpxa2PaihcQCnD3DG1KS0BevuwlI_ZeQQ_r1G1gG9F1hseVLlvofW0_G38z-jlTVMmMPnuoKg6lyLpxzJJoebpDuPMA7SL5iaOkZi82opSEX_Dwvg0FQBlDpICK_D3BYZqp4ZXBMdv1Hchevr7g9Dy9qsC-fVog");'
+                  ></div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#101518] text-[22px] font-bold leading-tight tracking-[-0.015em]">Dr. Ethan Carter</p>
+                    <p class="text-[#5c778a] text-base font-normal leading-normal">Cardiologist</p>
+                    <p class="text-[#5c778a] text-base font-normal leading-normal">123 Medical Center</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overflow-auto w-fit min-w-[300px] box-border">
+              <div class="layout-content-container flex flex-col w-[660px] flex-1">
+                <div class="px-4 py-3">
+                      <div class="flex rounded-xl border border-[#d4dde2] bg-gray-50">
+                        <table class="min-w-full">
+                          <thead>
+                            <tr class="bg-gray-50">
+                              <th class="table-68ee368f-08da-466c-ac99-febb1d811527-column-120 px-4 py-3 text-left text-[#101518] w-[400px] text-sm font-medium leading-normal">
+                                Patient Name
+                              </th>
+                              <th class="table-68ee368f-08da-466c-ac99-febb1d811527-column-240 px-4 py-3 text-left text-[#101518] w-[400px] text-sm font-medium leading-normal">
+                                Date of Birth
+                              </th>
+                              <th class="table-68ee368f-08da-466c-ac99-febb1d811527-column-360 px-4 py-3 text-left text-[#101518] w-[400px] text-sm font-medium leading-normal">Gender</th>
+                              <th class="table-68ee368f-08da-466c-ac99-febb1d811527-column-480 px-4 py-3 text-left text-[#101518] w-[400px] text-sm font-medium leading-normal">
+                                Last Visit
+                              </th>
+                              <th class="table-68ee368f-08da-466c-ac99-febb1d811527-column-600 px-4 py-3 text-left text-[#101518] w-60 text-sm font-medium leading-normal">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="border-t border-t-[#d4dde2] row-on-click">
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-120 h-[72px] px-4 py-2 w-[400px] text-[#101518] text-sm font-normal leading-normal">
+                                Sophia Clark
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-240 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">
+                                1985-03-15
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-360 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">Mujer</td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-480 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">
+                                2023-11-20
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-600 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                                <button
+                                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#eaeef1] text-[#101518] text-sm font-medium leading-normal w-full"
+                                >
+                                  <span class="truncate">Active</span>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr class="border-t border-t-[#d4dde2]">
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-120 h-[72px] px-4 py-2 w-[400px] text-[#101518] text-sm font-normal leading-normal">
+                                Liam Harris
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-240 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">
+                                1978-07-22
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-360 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">Hombre</td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-480 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">
+                                2023-12-05
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-600 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                                <button
+                                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#eaeef1] text-[#101518] text-sm font-medium leading-normal w-full"
+                                >
+                                  <span class="truncate">Active</span>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr class="border-t border-t-[#d4dde2]">
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-120 h-[72px] px-4 py-2 w-[400px] text-[#101518] text-sm font-normal leading-normal">
+                                Olivia Bennett
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-240 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">
+                                1992-01-10
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-360 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">Mujer</td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-480 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">
+                                2023-11-15
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-600 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                                <button
+                                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#eaeef1] text-[#101518] text-sm font-medium leading-normal w-full"
+                                >
+                                  <span class="truncate">Inactive</span>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr class="border-t border-t-[#d4dde2]">
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-120 h-[72px] px-4 py-2 w-[400px] text-[#101518] text-sm font-normal leading-normal">
+                                Noah Foster
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-240 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">
+                                1965-09-08
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-360 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">Hombre</td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-480 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">
+                                2023-12-10
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-600 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                                <button
+                                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#eaeef1] text-[#101518] text-sm font-medium leading-normal w-full"
+                                >
+                                  <span class="truncate">Active</span>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr class="border-t border-t-[#d4dde2]">
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-120 h-[72px] px-4 py-2 w-[400px] text-[#101518] text-sm font-normal leading-normal">
+                                Ava Reynolds
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-240 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">
+                                1980-05-29
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-360 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">Mujer</td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-480 h-[72px] px-4 py-2 w-[400px] text-[#5c778a] text-sm font-normal leading-normal">
+                                2023-11-28
+                              </td>
+                              <td class="table-68ee368f-08da-466c-ac99-febb1d811527-column-600 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                                <button
+                                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-[#eaeef1] text-[#101518] text-sm font-medium leading-normal w-full"
+                                >
+                                  <span class="truncate">Active</span>
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="layout-content-container flex flex-col max-w-[460px] w-fit">
+              <div class="flex items-center justify-center gap-6 p-4">
+                <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
+                  <div class="flex items-center p-1 justify-between">
+                    <button>
+                      <div class="text-[#101518] flex size-10 items-center justify-center" data-icon="CaretLeft" data-size="18px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                          <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+                        </svg>
+                      </div>
+                    </button>
+                    <p class="text-[#101518] text-base font-bold leading-tight flex-1 text-center">December 2023</p>
+                    <button>
+                        <div class="text-[#101518] flex size-10 items-center justify-center" data-icon="CaretRight" data-size="18px" data-weight="regular">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+                            </svg>
+                        </div>
+                    </button>
+                  </div>
+                  <div class="grid grid-cols-7">
+                    <p class="text-[#101518] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-10 w-full items-center justify-center pb-0.5">S</p>
+                    <p class="text-[#101518] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-10 w-full items-center justify-center pb-0.5">M</p>
+                    <p class="text-[#101518] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-10 w-full items-center justify-center pb-0.5">T</p>
+                    <p class="text-[#101518] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-10 w-full items-center justify-center pb-0.5">W</p>
+                    <p class="text-[#101518] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-10 w-full items-center justify-center pb-0.5">T</p>
+                    <p class="text-[#101518] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-10 w-full items-center justify-center pb-0.5">F</p>
+                    <p class="text-[#101518] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-10 w-full items-center justify-center pb-0.5">S</p>
+                    <button class="h-10 w-full text-[#101518] col-start-4 text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">1</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">2</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">3</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">4</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full bg-[#b2d1e5]">5</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">6</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">7</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">8</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">9</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">10</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">11</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">12</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">13</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">14</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">15</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">16</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">17</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">18</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">19</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">20</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">21</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">22</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">23</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">24</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">25</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">26</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">27</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">28</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">29</div>
+                    </button>
+                    <button class="h-10 w-full text-[#101518] text-sm font-medium leading-normal">
+                      <div class="flex size-full items-center justify-center rounded-full">30</div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<style>
+    tbody tr {
+        cursor: pointer;
+        transitio: 1s ease-in
+    }
+    tbody tr:hover {
+        cursor: pointer;
+        background: lightgray;
+    }
+</style>
