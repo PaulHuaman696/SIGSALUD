@@ -1,0 +1,32 @@
+<div onclick="location.href='/paciente/<%=id%>'" class="patient hover:bg-gray-200 rounded-full w-full max-w-[500px] flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
+  <div class="flex items-center gap-4">
+    <div
+      class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
+      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQjQsw5GfQ5WoSzY3MQ1Hf0nBxxBmctV7BGQmKtAD66TLjF4OkK-7Lcn_z5VbPhDgMJvuyIxC8sMSPmJqoLGPYizIY268OGDreeEIRAfeLTpY47n0mhp7dq4omfjYYdPYDq7IPSxy-Cs2mp5P0F_S_Bf3mjS82jgt_NV_hBAGjII4rQkmR48748yUfYC_VjhaplwoYTEGPLuNQW7RsZh7wVdQsxpXmYp-VpWdv34W8QCIRTjUK571KUFEsLZwl1oZOB3lmskrVPIS2");'
+    ></div>
+    <div class="flex flex-col justify-center">
+        <p class="text-[#111518] text-base font-medium leading-normal line-clamp-1 w-[130px]"><%= paciente%></p>
+        <p class="text-[#60768a] text-sm font-normal leading-normal line-clamp-2"><%= hora%></p>
+    </div>
+    <div>
+        <% if (estado == "Atendido") {%>
+            <p class="text-[#111518] font-normal bg-stone-500 rounded-full px-3 py-1"><%= estado%></p>
+        <% } else if (estado == "Pendiente") { %>
+            <p class="text-[#111518] font-normal bg-red-500 rounded-full px-3 py-1"><%= estado%></p>
+        <% } else if (estado == "Cancelado") {%>
+            <p class="text-[#111518] font-normal bg-blue-500 rounded-full px-3 py-1"><%= estado%></p>
+        <% } else if (estado == "Reprogramado") { %>
+            <p class="text-[#111518] font-normal bg-green-800 rounded-full px-3 py-1"><%= estado%></p>
+        <% } else { %>
+            <p class="text-[#111518] font-normal bg-purple-500 rounded-full px-3 py-1"><%= estado%></p>
+        <% }%>
+    </div>
+  </div>
+  <div class="shrink-0">
+    <div class="text-[#111518] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
