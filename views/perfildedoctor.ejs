@@ -80,7 +80,7 @@
         </div>
         <div class="w-full flex flex-col items-center px-2 box-border">
             <% pacientes.map(paciente => {%>
-                <%- include("partials/patientButton", paciente)%>
+                <%- include("partials/patientButton", {getColorByStatus, ...paciente})%>
             <%})%>
         </div>
     </div>

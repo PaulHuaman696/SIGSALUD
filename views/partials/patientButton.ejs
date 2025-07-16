@@ -9,17 +9,7 @@
         <p class="text-[#60768a] text-sm font-normal leading-normal line-clamp-2"><%= hora%></p>
     </div>
     <div>
-        <% if (estado == "Atendido") {%>
-            <p class="text-[#111518] font-normal bg-stone-500 rounded-full px-3 py-1"><%= estado%></p>
-        <% } else if (estado == "Pendiente") { %>
-            <p class="text-[#111518] font-normal bg-red-500 rounded-full px-3 py-1"><%= estado%></p>
-        <% } else if (estado == "Cancelado") {%>
-            <p class="text-[#111518] font-normal bg-blue-500 rounded-full px-3 py-1"><%= estado%></p>
-        <% } else if (estado == "Reprogramado") { %>
-            <p class="text-[#111518] font-normal bg-green-800 rounded-full px-3 py-1"><%= estado%></p>
-        <% } else { %>
-            <p class="text-[#111518] font-normal bg-purple-500 rounded-full px-3 py-1"><%= estado%></p>
-        <% }%>
+        <p class="text-[#111518] font-normal <%= getColorByStatus(estado)%> rounded-full px-3 py-1"><%= estado%></p>
     </div>
   </div>
   <div class="shrink-0">

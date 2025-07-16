@@ -18,10 +18,10 @@
           <h2 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Detalles de la Cita</h2>
         </div>
     </div>
-    <div class="px-10 flex flex-col flex-1 justify-between items-center">
+    <div class="px-8 flex flex-col flex-1 justify-between items-center">
         <div class="max-w-[440px] w-full">
-            <h3 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Información del Paciente</h3>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <h3 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em] pb-2 pt-4">Información del Paciente</h3>
+            <div class="flex items-center gap-4 bg-whitemin-h-[72px] py-2">
               <div
                 class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBLSPqock3ARX3N27JaDgUFnipzddRS0Edp6yrmeV_rjVmcqL-bN8OIfdmdZbqkFi4GJAQYVSRMyG7wQveuZPF1E3eG0oeov8pPseoV6VGA3ig1juG3IKzxUhfrq15ejjx0pUuC1Uvf4-kDfaMna1Db2sM0mZ1x3gsscCtdB9mgis7pB41BuEHBMRH-EOc_Beun-Er6S4SvDLgyK-uxgCy4-8SNvY0NF747DkgXfktLjKxPXuIE2rRrH1AGYXdHtDNelnOMebRPcyIV");'
@@ -31,7 +31,7 @@
                 <p class="text-[#60768a] text-sm font-normal leading-normal line-clamp-2"><%= genero%>, <%= edad%> años</p>
               </div>
             </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <div class="flex items-center gap-4 bg-white min-h-[72px] py-2">
               <div class="text-[#111518] flex items-center justify-center rounded-lg bg-[#f0f2f5] shrink-0 size-12" data-icon="Envelope" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path
@@ -45,7 +45,7 @@
                 <p class="text-[#60768a] text-sm font-normal leading-normal line-clamp-2"><%= email%>@email.com</p>
               </div>
             </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <div class="flex items-center gap-4 bg-white min-h-[72px] py-2">
               <div class="text-[#111518] flex items-center justify-center rounded-lg bg-[#f0f2f5] shrink-0 size-12" data-icon="Phone" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path
@@ -59,10 +59,10 @@
               </div>
             </div>
             <div class="flex flex-row w-full justify-between items-center">
-                <h3 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Detalles de la Cita</h3>
-                <span class="rounded-full px-3 py-1 <%= getColorByStatus(estado)%>"><%= estado%></span>
+                <h3 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em] pb-2 pt-4">Detalles de la Cita</h3>
+                <span class="rounded-full py-1 px-4 <%= getColorByStatus(estado)%>"><%= estado%></span>
             </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <div class="flex items-center gap-4 bg-white min-h-[72px] py-2">
               <div class="text-[#111518] flex items-center justify-center rounded-lg bg-[#f0f2f5] shrink-0 size-12" data-icon="Note" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path
@@ -75,7 +75,7 @@
                 <p class="text-[#60768a] text-sm font-normal leading-normal line-clamp-2"><%= motivo%></p>
               </div>
             </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <div class="flex items-center gap-4 bg-white min-h-[72px] py-2">
               <div class="text-[#111518] flex items-center justify-center rounded-lg bg-[#f0f2f5] shrink-0 size-12" data-icon="Calendar" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path
@@ -93,15 +93,16 @@
             </div>
         </div>
         <div class="py-5 w-full">
-            <div class="w-full px-4 py-3 flex flex-col items-center">
+            <div class="w-full py-3 flex flex-col items-center">
                 <button
                 class="w-full max-w-[400px] cursor-pointer items-center rounded-full h-12 px-5 bg-[#0b80ee] text-white font-bold leading-normal"
                 >
                     Marcar como Ausente
                 </button>
             </div>
-            <div class="w-full px-4 py-3 flex flex-col items-center">
+            <div class="w-full py-3 flex flex-col items-center">
                 <button
+                onclick="location.href='/diagnostico'"
                 class="w-full max-w-[400px] cursor-pointer items-center rounded-full h-12 px-5 bg-[#0b80ee] text-white font-bold leading-normal"
                 >
                     Diagnosticar
